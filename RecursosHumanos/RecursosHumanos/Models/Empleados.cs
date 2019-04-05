@@ -11,7 +11,8 @@ namespace RecursosHumanos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Empleados
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,14 +26,33 @@ namespace RecursosHumanos.Models
         }
     
         public int ID { get; set; }
+
+        [Display(Name = "Código:")]
         public Nullable<int> Codigo_Empleado { get; set; }
-        public Nullable<int> Departamento { get; set; }
+
+        [Display(Name = "Nombre:")]
         public string Nombre { get; set; }
+
+        [Display(Name = "Apellido:")]
         public string Apellido { get; set; }
+
+        [Display(Name = "Departamento:")]
+        public Nullable<int> Departamento { get; set; }
+
+        [Display(Name = "Cargo:")]
         public Nullable<int> Cargo { get; set; }
+
+        [Display(Name = "Salario:")]
         public Nullable<decimal> Salario { get; set; }
+
+        [Display(Name = "Fecha de ingreso:")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> Fecha_De_Ingreso { get; set; }
+
+        [Display(Name = "Teléfono:")]
         public string Telefono { get; set; }
+
+        [Display(Name = "Estatus:")]
         public string Estatus { get; set; }
     
         public virtual cargo cargo1 { get; set; }
@@ -48,4 +68,5 @@ namespace RecursosHumanos.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vacaciones> Vacaciones { get; set; }
     }
+   
 }

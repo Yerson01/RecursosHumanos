@@ -11,14 +11,25 @@ namespace RecursosHumanos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Nomina
     {
         public int ID { get; set; }
+
+        [Display(Name = "Monto total:")]
         public Nullable<decimal> Monto_Total { get; set; }
+
+        [Display(Name = "Empleado:")]
         public Nullable<int> FK_Empleado { get; set; }
+
+        [Display(Name = "Día:")]
         public string Dia { get; set; }
+
+        [Display(Name = "Mes:")]
         public string Mes { get; set; }
+
+        [Display(Name = "Año:")]
         public string Año { get; set; }
     
         public virtual Empleados Empleados { get; set; }

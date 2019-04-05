@@ -11,13 +11,24 @@ namespace RecursosHumanos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Licencias
     {
         public int ID { get; set; }
+
+        [Display(Name = "Empleado:")]
         public Nullable<int> FK_Empleado { get; set; }
+
+        [Display(Name = "Motivo:")]
         public string Comentario { get; set; }
+
+        [Display(Name = "Hasta:")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> Fecha_Entrada { get; set; }
+
+        [Display(Name = "Desde:")]
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> Fecha_Salida { get; set; }
     
         public virtual Empleados Empleados { get; set; }

@@ -11,15 +11,26 @@ namespace RecursosHumanos.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Salida
     {
         public int ID { get; set; }
         public Nullable<int> FK_Empleado { get; set; }
+
+        [Display(Name = "Tipo de salida:")]
         public string Tipo_Salida { get; set; }
+
+        [Display(Name = "Motivo:")]
         public string Motivo { get; set; }
+
+        [Display(Name = "Día:")]
         public string Dia { get; set; }
+
+        [Display(Name = "Mes:")]
         public string Mes { get; set; }
+
+        [Display(Name = "Año:")]
         public string Año { get; set; }
     
         public virtual Empleados Empleados { get; set; }
