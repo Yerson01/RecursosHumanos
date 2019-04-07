@@ -1,4 +1,11 @@
-﻿html {
+﻿:root {
+    --fuentePrimaria: 'Montserrat', sans-serif;
+    --fuenteSecundaria: 'Oswald', sans-serif;
+    --colorPrimario: rgba(73,155,234,1);
+    --colorSecundario: #207e9b;
+}
+
+html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
@@ -8,6 +15,7 @@
 }
 
 body {
+    font-family: var(--fuentePrimaria);
     background-attachment: fixed;
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
@@ -21,6 +29,22 @@ body {
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
+
+.boton{
+    border:none;
+    background-color:var(--colorPrimario);
+    font-size:2rem;
+    padding: .8rem 2rem;
+    border-radius: .7rem;
+    color: white;
+    transition: all .1s;
+}
+
+.boton:hover{
+    background-color: var(--colorSecundario);
+}
+
+/*PANTALLA DE INICIO*/
 
 .contenedor-iconos {
     display: grid;
@@ -42,7 +66,7 @@ body {
     }
 }
 
-.tabla-icon {
+.modulo {
     width: 25rem;
     height: 25rem;
     background: rgba(73,155,234,1);
@@ -54,26 +78,118 @@ body {
     transition: all .2s ease-in-out;
 }
 
-.tabla-icon:hover {
+.modulo:hover {
     transform: scale(1.1);
 }
 
-    .tabla-icon:hover a{
-        color: gray!important;
-    }
+.modulo:hover a {
+    color: crimson !important;
+}
 
-.tabla-icon a {
+.modulo a {
     text-decoration: none;
     color: #FFFFFF;
 }
 
-.tabla-icon i {
+.modulo i {
     font-size: 9rem;
     margin-bottom: 1rem;
 }
 
-.tabla-icon p {
+.modulo p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
     font-weight: bold;
 }
+
+/*MODULO MANTENIMIENTO*/
+
+.contenedor-modulo{
+}
+
+.contenedor-modulo h2 {
+    font-family: var(--fuenteSecundaria);
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.barra-buscar{
+    display:flex;
+    justify-content:center;
+}
+
+.barra-buscar .campo-buscar{
+    flex: 0 0 100%;
+    margin-right: 1rem;
+    border: 1.5px solid var(--colorPrimario);
+    border-radius: .5rem;
+    padding: 1rem;
+    max-width: 50rem!important;
+}
+
+.opciones {
+    margin-top:4rem;
+    margin-bottom:2rem;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.opciones a{
+    margin-right: 1rem;
+    color: white;
+}
+
+.opciones a:hover{
+    text-decoration: none;
+}
+
+.opciones a:last-of-type{
+    margin-right: 0;
+}
+
+
+/*TABLAS*/
+.table .tabla-header{
+    background-color: crimson;
+    color: white;
+}
+
+.table th {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.6rem .5rem!important;
+}
+
+.table td{
+    text-align:center;
+    font-size: 1.5rem;
+    color: #6a6464;
+    font-weight: bold;
+    padding-top: 1.5rem!important;
+    padding-bottom: 1.5rem!important;
+}
+
+.tabla-body{
+    background-color: white;
+}
+
+.acciones a{
+    font-size: 1.9rem;
+    margin-right: 1rem;
+    color:crimson;
+}
+
+.acciones a:hover{
+    color: var(--colorSecundario);
+}
+
+
+
+
+
+
+
+
+

@@ -6,102 +6,96 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 @Styles.Render("~/Content/estilos.css")
 
-<h2>Index</h2>
+<div class="contenedor-modulo contenedor">
+    <h2 class="margin">Empleados</h2>
+        @using (Html.BeginForm("Index", "Empleados", FormMethod.Post))
+        {
+            <div class="barra-buscar">
+                <input type="text" class="campo-buscar" name="buscar" value="" placeholder="Buscar empleados" />
+                <button class="boton boton-buscar" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        }
 
-@using (Html.BeginForm("Index", "Empleados", FormMethod.Post))
-{
-    @Html.TextBox("Buscar")
-    <button class="btn btn-default btn-lg" type="submit">Buscar</button>
-}
+        <div class="opciones">
+            <a href="@Url.Action("Create")" class="boton"><i class="fas fa-user-plus"></i> Añadir</a>
+            <a href="@Url.Action("Index", "Nominas")" class="boton"><i class="fas fa-money-check-alt"></i> Calcular Nómina</a>
+        </div>
+ 
+    <div class="contenedor-tablas">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Codigo_Empleado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Departamento1.Nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cargo1.Cargo1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Salario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha_De_Ingreso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estatus)
-        </th>
-        <th></th>
-    </tr>
+        <table class="table">
+            <tr class="tabla-header">
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Empleado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Apellido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Departamento1.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cargo1.Cargo1)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Salario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha_De_Ingreso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estatus)
+                </th>
+                <th></th>
+            </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Codigo_Empleado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Departamento1.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.cargo1.Cargo1)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Salario)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fecha_De_Ingreso)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Telefono)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estatus)
-            </td>
+            @foreach (var item in Model)
+            {
+                <tr class="tabla-body">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Departamento1.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.cargo1.Cargo1)
+                    </td>
+                    <td>
+                        RD$ @Html.DisplayFor(modelItem => item.Salario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_De_Ingreso)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefono)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estatus)
+                    </td>
 
-            <style>
-                td a {
-                    font-
-                }
-            </style>
-            <td>
-                <a href="@Url.Action("Edit", new { id = item.ID })"><i class="fas fa-user-edit"></i></a> |
-                <a href="@Url.Action("Details", new { id = item.ID })"><i class="fas fa-info-circle"></i></a> |
-                <a href="@Url.Action("Delete", new { id = item.ID })"><i class="fas fa-trash-alt"></i></a>
-            </td>
-        </tr>
-    }
-</table>
-
-<style>
-    .boton a {
-        color: black;
-    }
-</style>
-
-<div class="boton">
-    <a href="@Url.Action("Index", "Nominas")">Calcular Nomina</a>
+                    <td class="acciones">
+                        <a href="@Url.Action("Edit", new { id = item.ID })"><i class="fas fa-user-edit"></i></a>
+                        <a href="@Url.Action("Delete", new { id = item.ID })"><i class="fas fa-trash-alt"></i></a>
+                        <a href="@Url.Action("Details", new { id = item.ID })"><i class="fas fa-info-circle"></i></a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div><!--contenedor-tablas-->
 </div>

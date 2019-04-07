@@ -46,8 +46,8 @@ namespace RecursosHumanos.Controllers
 
             if (buscar != "")
             {
-                List<Empleados> empleados = db.Empleados.Where(c => c.Nombre.Contains(buscar)).ToList();
-                empleados = db.Empleados.Where(c => c.Apellido.Contains(buscar)).ToList();
+                List<Empleados> empleados = new List<Empleados>();
+                empleados = db.Empleados.Where(x => x.Nombre.Contains(buscar) || x.Apellido.Contains(buscar)).ToList();
                 return View(empleados);
             }
 

@@ -27,32 +27,39 @@ namespace RecursosHumanos.Models
     
         public int ID { get; set; }
 
-        [Display(Name = "Código:")]
+        [Required]
+        [Display(Name = "Código")]
         public Nullable<int> Codigo_Empleado { get; set; }
 
-        [Display(Name = "Nombre:")]
+        [Required]
+        [Display(Name = "Nombre")]
         public string Nombre { get; set; }
 
-        [Display(Name = "Apellido:")]
+        [Required]
+        [Display(Name = "Apellido")]
         public string Apellido { get; set; }
 
-        [Display(Name = "Departamento:")]
+        [Display(Name = "Departamento")]
         public Nullable<int> Departamento { get; set; }
 
-        [Display(Name = "Cargo:")]
+        [Display(Name = "Cargo")]
         public Nullable<int> Cargo { get; set; }
 
-        [Display(Name = "Salario:")]
+        [Required]
+        [Display(Name = "Salario")]
         public Nullable<decimal> Salario { get; set; }
 
-        [Display(Name = "Fecha de ingreso:")]
+        [Required]
+        [Display(Name = "Fecha de ingreso")]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> Fecha_De_Ingreso { get; set; }
 
-        [Display(Name = "Teléfono:")]
+        [Required]
+        [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
 
-        [Display(Name = "Estatus:")]
+        [Required]
+        [Display(Name = "Estatus")]
         public string Estatus { get; set; }
 
         public string mifecha = DateTime.Now.ToShortDateString();
