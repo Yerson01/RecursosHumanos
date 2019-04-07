@@ -1,0 +1,46 @@
+﻿@model RecursosHumanos.Models.Empleados
+@{
+    ViewBag.Title = "EmpleadoSearch";
+}
+
+<h2>EmpleadoSearch</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+    @using (Html.BeginForm("EmpleadoSearch", "empleados", FormMethod.Get))
+    {
+
+
+        <fieldset>
+            <legend>Opciones a buscar</legend>
+            @Html.TextBox("buscar")
+            @Html.RadioButton("buscarPor", "nombre", true) <text>Nombre</text>
+            @Html.RadioButton("buscarPor", "departamento") <text>Departamento</text>
+            @Html.RadioButton("buscarPor", "Cargo") <text>Cargo</text>
+
+        </fieldset>
+        <br />
+        <fieldset>
+            <legend>Buscar por fecha</legend>
+            @Html.TextBox("inicio", null, new Dictionary<string, object>() { { "placeholder", "Fecha inical" } })  @Html.TextBox("final", null, new Dictionary<string, object>() { { "placeholder", "Fecha final" } })
+            <br />
+            @Html.RadioButton("buscarPor", "entradaEmpleado") <text>Entrada de empleado por fecha</text>
+
+        </fieldset>
+        <br />
+        <fieldset>
+            <br />
+            <legend>Empleado activo o inactivo</legend>
+            @Html.RadioButton("estatus", "A", true) <text>Activo</text>
+            @Html.RadioButton("estatus", "I") <text>Inactivo</text>
+            @*<input id="estatus" name="estatus" type="checkbox" value="1" /><input name="estatus" type="hidden" value="0" /> <text> Estatus activado</text>*@
+        </fieldset>
+        <br />
+
+
+        <input type="submit" name="buscar" value="Enviar" />
+    }
+
+</p>

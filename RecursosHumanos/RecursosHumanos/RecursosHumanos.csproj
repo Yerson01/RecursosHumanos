@@ -137,6 +137,7 @@
     <Compile Include="Controllers\CargoesController.cs" />
     <Compile Include="Controllers\DepartamentoesController.cs" />
     <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LicenciasController.cs" />
     <Compile Include="Controllers\NominasController.cs" />
     <Compile Include="Controllers\PermisoesController.cs" />
@@ -279,6 +280,8 @@
     <Content Include="Views\Vacaciones\Details.cshtml" />
     <Content Include="Views\Vacaciones\Edit.cshtml" />
     <Content Include="Views\Vacaciones\Index.cshtml" />
+    <Content Include="Views\Empleados\Totalizar.cshtml" />
+    <Content Include="Views\Empleados\LlenarCombo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

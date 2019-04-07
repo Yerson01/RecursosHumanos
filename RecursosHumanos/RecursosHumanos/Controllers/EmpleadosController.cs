@@ -14,11 +14,44 @@ namespace RecursosHumanos.Controllers
     {
         private RecursosHumanosEntities db = new RecursosHumanosEntities();
 
+        public ActionResult Totalizar()
+        {
+            ViewBag.TotalSalario = db.Empleados.Sum(a => a.Salario);
+            ViewBag.TotalEmpleados = db.Empleados.Count();
+
+            db.SaveChanges();
+            return View();
+        }
+
+        public ActionResult LlenarCombo()
+        {
+            var empleados = db.Empleados.ToList();
+
+            var listaEmpleados = new SelectList(empleados, "Id", "Salario");
+            ViewBag.Empleados = listaEmpleados;
+
+            return View();
+        }
+
         // GET: Empleados
         public ActionResult Index()
         {
             var empleados = db.Empleados.Include(e => e.cargo1).Include(e => e.Departamento1);
             return View(empleados.ToList());
+        }
+
+        [HttpPost]
+        public ActionResult Index(string buscar)
+        {
+
+            if (buscar != "")
+            {
+                List<Empleados> empleados = db.Empleados.Where(c => c.Nombre.Contains(buscar)).ToList();
+                empleados = db.Empleados.Where(c => c.Apellido.Contains(buscar)).ToList();
+                return View(empleados);
+            }
+
+            return View(db.Empleados.ToList());
         }
 
         // GET: Empleados/Details/5

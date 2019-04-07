@@ -54,7 +54,10 @@ namespace RecursosHumanos.Models
 
         [Display(Name = "Estatus:")]
         public string Estatus { get; set; }
-    
+
+        public string mifecha = DateTime.Now.ToShortDateString();
+        public string fecha = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
         public virtual cargo cargo1 { get; set; }
         public virtual Departamento Departamento1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
