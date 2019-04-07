@@ -4,6 +4,10 @@
     ViewBag.Title = "Index";
 }
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
+
 <h2>Index</h2>
 
 @using (Html.BeginForm("Index", "Empleados", FormMethod.Post))
@@ -78,18 +82,22 @@
                 @Html.DisplayFor(modelItem => item.Estatus)
             </td>
 
-
+            <style>
+                td a {
+                    font-
+                }
+            </style>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                <a href="@Url.Action("Edit", new { id = item.ID })"><i class="fas fa-user-edit"></i></a> |
+                <a href="@Url.Action("Details", new { id = item.ID })"><i class="fas fa-info-circle"></i></a> |
+                <a href="@Url.Action("Delete", new { id = item.ID })"><i class="fas fa-trash-alt"></i></a>
             </td>
         </tr>
     }
 </table>
 
 <style>
-    .boton a{
+    .boton a {
         color: black;
     }
 </style>

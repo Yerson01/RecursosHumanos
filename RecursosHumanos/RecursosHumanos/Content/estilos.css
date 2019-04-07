@@ -1,0 +1,79 @@
+﻿html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-attachment: fixed;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.margin {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.contenedor-iconos {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 4rem;
+}
+
+@media (min-width:576px){
+    .contenedor-iconos {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (min-width:980px){
+    .contenedor-iconos {
+        grid-template-columns: repeat(3, auto);
+        grid-gap: 8rem;
+    }
+}
+
+.tabla-icon {
+    width: 25rem;
+    height: 25rem;
+    background: rgba(73,155,234,1);
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s ease-in-out;
+}
+
+.tabla-icon:hover {
+    transform: scale(1.1);
+}
+
+    .tabla-icon:hover a{
+        color: gray!important;
+    }
+
+.tabla-icon a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.tabla-icon i {
+    font-size: 9rem;
+    margin-bottom: 1rem;
+}
+
+.tabla-icon p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
