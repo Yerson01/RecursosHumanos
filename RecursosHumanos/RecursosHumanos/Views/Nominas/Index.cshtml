@@ -4,53 +4,61 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Monto_Total)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dia)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Año)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Empleados.Nombre)
-        </th>
-        <th></th>
-    </tr>
+<div class="contenedor-modulo contenedor">
+    <h2 class="margin">Nomina</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Monto_Total)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Dia)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Año)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Empleados.Nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
-}
-</table>
+    
+    <div class="contenedor-tablas">
+        <table class="table">
+            <tr class="tabla-header">
+                <th>
+                    @Html.DisplayNameFor(model => model.Monto_Total)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dia)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Año)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados.Nombre)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="tabla-body">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Monto_Total)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Dia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Año)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+        </table>
+        </div>
+    </div>

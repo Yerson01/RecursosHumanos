@@ -1,6 +1,7 @@
 ﻿:root {
     --fuentePrimaria: 'Montserrat', sans-serif;
     --fuenteSecundaria: 'Oswald', sans-serif;
+    --fuente: 'Nunito', sans-serif;
     --colorPrimario: rgba(73,155,234,1);
     --colorSecundario: #207e9b;
 }
@@ -26,8 +27,8 @@ body {
 }
 
 .margin {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    margin-top: 4rem!important;
+    margin-bottom: 4rem!important;
 }
 
 .boton{
@@ -136,7 +137,7 @@ body {
 }
 
 .opciones a{
-    margin-right: 1rem;
+    margin-right: 1.2rem!important;
     color: white;
 }
 
@@ -159,7 +160,7 @@ body {
     font-size: 1.5rem;
     text-transform: uppercase;
     text-align: center;
-    padding: 1.6rem .5rem!important;
+    padding: 1.6rem .6rem!important;
 }
 
 .table td{
@@ -176,13 +177,57 @@ body {
 }
 
 .acciones a{
-    font-size: 1.9rem;
-    margin-right: 1rem;
+    font-size: 2rem;
+    margin-right: 1.5rem;
     color:crimson;
+}
+
+acciones a:last-of-type{
+    margin-right: 0;
 }
 
 .acciones a:hover{
     color: var(--colorSecundario);
+}
+
+/*SECCION DE CREAR*/
+.contenedor-campos{
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.borde{
+    border: 1.5px solid var(--colorPrimario);
+    padding: 1rem 2rem;
+}
+
+.borde legend{
+    color: var(--colorSecundario);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.campo{
+    margin-bottom: 2rem;
+}
+
+.campo label{
+    font-size:2.2rem;
+    font-family: var(--fuenteSecundaria);
+    color: #000;
+    padding: 0;
+    font-weight: normal;
+}
+
+.campo .campo-texto{
+    max-width: 100%;
+    width:100%;
+    margin-top: .7rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.6rem;  
 }
 
 
