@@ -23,10 +23,11 @@ namespace RecursosHumanos.Models
     
         public int ID { get; set; }
 
-        [Display(Name = "ID:")]
+        [Display(Name = "Código")]
         public Nullable<int> Codigo_Departamnto { get; set; }
 
-        [Display(Name = "Departamento:")]
+        [Required]
+        [Display(Name = "Departamento")]
         public string Nombre { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -18,19 +18,24 @@ namespace RecursosHumanos.Models
         public int ID { get; set; }
         public Nullable<int> FK_Empleado { get; set; }
 
-        [Display(Name = "Tipo de salida:")]
+        [Required]
+        [Display(Name = "Tipo de salida")]
         public string Tipo_Salida { get; set; }
 
-        [Display(Name = "Motivo:")]
+        [Required]
+        [Display(Name = "Motivo")]
         public string Motivo { get; set; }
 
-        [Display(Name = "Día:")]
+        [Required]
+        [Display(Name = "Día")]
         public string Dia { get; set; }
 
-        [Display(Name = "Mes:")]
+        [Required]
+        [Display(Name = "Mes")]
         public string Mes { get; set; }
 
-        [Display(Name = "Año:")]
+        [Required]
+        [Display(Name = "Año")]
         public string Año { get; set; }
     
         public virtual Empleados Empleados { get; set; }

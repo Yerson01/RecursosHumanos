@@ -115,6 +115,13 @@ body {
     text-align: center;
 }
 
+.contenedor-modulo h3{
+    text-align: center;
+    font-weight: bold;
+    margin-top: 6rem!important;
+    margin-bottom: 3rem!important;
+}
+
 .barra-buscar{
     display:flex;
     justify-content:center;
@@ -144,11 +151,6 @@ body {
 .opciones a:hover{
     text-decoration: none;
 }
-
-.opciones a:last-of-type{
-    margin-right: 0;
-}
-
 
 /*TABLAS*/
 .table .tabla-header{
@@ -228,6 +230,11 @@ acciones a:last-of-type{
     border: none;
     border-radius: 1rem;
     font-size: 1.6rem;  
+}
+
+.campo .info{
+    font-size: 1.6rem;
+    margin-top: .8rem;
 }
 
 

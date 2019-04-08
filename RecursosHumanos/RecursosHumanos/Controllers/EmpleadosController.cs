@@ -23,16 +23,6 @@ namespace RecursosHumanos.Controllers
             return View();
         }
 
-        public ActionResult LlenarCombo()
-        {
-            var empleados = db.Empleados.ToList();
-
-            var listaEmpleados = new SelectList(empleados, "Id", "Salario");
-            ViewBag.Empleados = listaEmpleados;
-
-            return View();
-        }
-
         // GET: Empleados
         public ActionResult Index()
         {

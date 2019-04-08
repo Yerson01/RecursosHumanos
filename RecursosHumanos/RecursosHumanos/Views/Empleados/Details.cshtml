@@ -4,91 +4,101 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
 
-<div>
-    <h4>Empleados</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Codigo_Empleado)
-        </dt>
+<div class="contenedor-modulo contenedor">
+    <h2 class="margin">Detalles</h2>
+    <div class="contenedor-campos">
+        <fieldset class="borde margin">
 
-        <dd>
-            @Html.DisplayFor(model => model.Codigo_Empleado)
-        </dd>
+            <legend>Información Personal</legend>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+            <div class="campo">
+                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.Nombre)
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+            <div class="campo">
+                @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.Apellido)
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Apellido)
-        </dt>
+            <div class="campo">
+                @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.Telefono)
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Apellido)
-        </dd>
+        </fieldset>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Departamento1.Nombre)
-        </dt>
+        <fieldset class="borde margin">
 
-        <dd>
-            @Html.DisplayFor(model => model.Departamento1.Nombre)
-        </dd>
+            <legend>Información Empresarial</legend>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cargo1.Cargo1)
-        </dt>
+            <div class="campo">
+                @Html.LabelFor(model => model.Codigo_Empleado, htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.Codigo_Empleado)
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.cargo1.Cargo1)
-        </dd>
+            <div class="campo">
+                @Html.LabelFor(model => model.Departamento, "Departamento", htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.Departamento1.Nombre)
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Salario)
-        </dt>
+            <div class="campo">
+                @Html.LabelFor(model => model.Cargo, "Cargo", htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.cargo1.Cargo1)
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Salario)
-        </dd>
+            <div class="campo">
+                @Html.LabelFor(model => model.Salario, htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    RD$ @Html.DisplayFor(model => model.Salario)
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fecha_De_Ingreso)
-        </dt>
+            <div class="campo">
+                @Html.LabelFor(model => model.Fecha_De_Ingreso, htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.Fecha_De_Ingreso)
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fecha_De_Ingreso)
-        </dd>
+            <div class="campo">
+                @Html.LabelFor(model => model.Estatus, htmlAttributes: new { @class = "label" })
+                <div class="info">
+                    @Html.DisplayFor(model => model.Estatus, new { @class="info"})
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
+        </fieldset>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estatus)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Estatus)
-        </dd>
-
-
-
-
-
-    </dl>
+        <div class="opciones">
+            <a href="@Url.Action("Index")" class="boton"><i class="fas fa-chevron-left"></i> Volver</a>
+            <a style="margin-right:0!important" href="@Url.Action("Edit", new { id = Model.ID })" class="boton"><i class="fas fa-user-edit"></i> Editar</a>
+        </div><!--OPCIONES-->
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+
+
+
+
+
+
+
+  

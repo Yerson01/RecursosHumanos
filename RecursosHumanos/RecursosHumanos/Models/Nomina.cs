@@ -17,19 +17,21 @@ namespace RecursosHumanos.Models
     {
         public int ID { get; set; }
 
-        [Display(Name = "Monto total:")]
+        [Display(Name = "Monto total")]
         public Nullable<decimal> Monto_Total { get; set; }
 
-        [Display(Name = "Empleado:")]
+        [Display(Name = "Empleado")]
         public Nullable<int> FK_Empleado { get; set; }
 
-        [Display(Name = "Día:")]
+        [Display(Name = "Día")]
         public string Dia { get; set; }
 
-        [Display(Name = "Mes:")]
+        [Required]
+        [Display(Name = "Mes")]
         public string Mes { get; set; }
 
-        [Display(Name = "Año:")]
+        [Required]
+        [Display(Name = "Año")]
         public string Año { get; set; }
     
         public virtual Empleados Empleados { get; set; }

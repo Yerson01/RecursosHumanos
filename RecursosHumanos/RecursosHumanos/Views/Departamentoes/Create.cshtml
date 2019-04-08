@@ -4,45 +4,51 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
+
+<div class="contenedor-modulo contenedor">
+    <h2 class="margin">Completa los campos del formulario</h2>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Departamento</h4>
-        <hr />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="contenedor-campos">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Codigo_Departamnto, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Codigo_Departamnto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Codigo_Departamnto, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <fieldset class="borde margin">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <legend>Información del departamento</legend>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="campo">
+                @Html.LabelFor(model => model.Codigo_Departamnto, htmlAttributes: new { @class = "label" })
+                <div class="entrada">
+                    @Html.EditorFor(model => model.Codigo_Departamnto, new { htmlAttributes = new { @class = "campo-texto", @min = "1" } })
+                    @Html.ValidationMessageFor(model => model.Codigo_Departamnto, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
+
+            <div class="campo">
+                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "label" })
+                <div class="entrada">
+                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "campo-texto" } })
+                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </fieldset>
+
+        <div class="opciones">
+            <a href="@Url.Action("Index")" class="boton"><i class="fas fa-user-times"></i> Cancelar</a>
+            <button type="submit" class="boton"><i class="fas fa-user-plus"></i> Añadir</button>
+        </div><!--OPCIONES-->
     </div>
-}
+    }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

@@ -282,7 +282,6 @@
     <Content Include="Views\Vacaciones\Edit.cshtml" />
     <Content Include="Views\Vacaciones\Index.cshtml" />
     <Content Include="Views\Empleados\Totalizar.cshtml" />
-    <Content Include="Views\Empleados\LlenarCombo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

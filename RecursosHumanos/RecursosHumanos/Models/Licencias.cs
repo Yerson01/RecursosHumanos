@@ -17,17 +17,21 @@ namespace RecursosHumanos.Models
     {
         public int ID { get; set; }
 
-        [Display(Name = "Empleado:")]
+        [Required]
+        [Display(Name = "Empleado")]
         public Nullable<int> FK_Empleado { get; set; }
 
-        [Display(Name = "Motivo:")]
+        [Required]
+        [Display(Name = "Motivo")]
         public string Comentario { get; set; }
 
-        [Display(Name = "Hasta:")]
+        [Required]
+        [Display(Name = "Hasta")]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> Fecha_Entrada { get; set; }
 
-        [Display(Name = "Desde:")]
+        [Required]
+        [Display(Name = "Desde")]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> Fecha_Salida { get; set; }
     
