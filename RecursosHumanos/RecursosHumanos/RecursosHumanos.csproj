@@ -282,6 +282,14 @@
     <Content Include="Views\Vacaciones\Edit.cshtml" />
     <Content Include="Views\Vacaciones\Index.cshtml" />
     <Content Include="Views\Empleados\Totalizar.cshtml" />
+    <Content Include="Views\Home\Mantenimiento.cshtml" />
+    <Content Include="Views\Home\Informes.cshtml" />
+    <Content Include="Views\Empleados\EmpleadosActivos.cshtml" />
+    <Content Include="Views\Empleados\EmpleadosInactivos.cshtml" />
+    <Content Include="Views\Nominas\VerNominas.cshtml" />
+    <Content Include="Views\Departamentoes\VerDepartamentos.cshtml" />
+    <Content Include="Views\Cargoes\VerCargos.cshtml" />
+    <Content Include="Views\Permisoes\VerPermisos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

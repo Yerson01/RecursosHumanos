@@ -78,5 +78,11 @@ namespace RecursosHumanos.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Vacaciones> Vacaciones { get; set; }
     }
+
+    public enum Estatus
+    {
+        Activo,
+        Inactivo
+    }
    
 }

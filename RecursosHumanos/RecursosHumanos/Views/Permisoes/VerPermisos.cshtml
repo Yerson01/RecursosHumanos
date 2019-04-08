@@ -1,0 +1,53 @@
+﻿@model IEnumerable<RecursosHumanos.Models.Permiso>
+@{
+    ViewBag.Title = "VerPermisos";
+}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
+
+<div class="contenedor-modulo contenedor">
+    <h2 class="margin">Permisos</h2>
+
+    <div class="contenedor-tablas">
+
+        <table class="table">
+            <tr class="tabla-header">
+                <th>
+                    @Html.DisplayNameFor(model => model.Empleados.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comentario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha_Salida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fecha_Entrada)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="tabla-body">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empleados.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Salida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Entrada)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

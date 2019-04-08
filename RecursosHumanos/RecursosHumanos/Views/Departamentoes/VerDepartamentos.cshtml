@@ -1,0 +1,41 @@
+﻿@model IEnumerable<RecursosHumanos.Models.Departamento>
+@{
+    ViewBag.Title = "VerDepartamentos";
+}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
+
+<div class="contenedor-modulo contenedor">
+    <h2 class="margin">Departamentos</h2>
+
+    <div class="contenedor-tablas">
+
+        <table class="table">
+            <tr class="tabla-header">
+                <th>
+                    @Html.DisplayNameFor(model => model.Codigo_Departamnto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="tabla-body">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo_Departamnto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

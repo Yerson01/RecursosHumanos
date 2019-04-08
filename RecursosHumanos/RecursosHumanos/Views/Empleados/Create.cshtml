@@ -1,5 +1,5 @@
 ﻿@model RecursosHumanos.Models.Empleados
-
+@using RecursosHumanos.Models
 @{
     ViewBag.Title = "Create";
 }
@@ -96,16 +96,15 @@
             <div class="campo">
                 @Html.LabelFor(model => model.Estatus, htmlAttributes: new { @class = "label" })
                 <div class="entrada">
-                    @Html.EditorFor(model => model.Estatus, new { htmlAttributes = new { @class = "campo-texto" } })
+                    @Html.DropDownListFor(model => model.Estatus, new SelectList(Enum.GetValues(typeof(Estatus))), new { @class = "campo-texto" })
                     @Html.ValidationMessageFor(model => model.Estatus, "", new { @class = "text-danger" })
                 </div>
             </div>
-
         </fieldset>
-
-        <div class="opciones">       
+        
+        <div class="opciones">
             <a href="@Url.Action("Index")" class="boton"><i class="fas fa-user-times"></i> Cancelar</a>
-            <button type="submit" class="boton"><i class="fas fa-user-plus"></i> Añadir</button>                   
+            <button type="submit" class="boton"><i class="fas fa-user-plus"></i> Añadir</button>
         </div><!--OPCIONES-->
     </div>
     }

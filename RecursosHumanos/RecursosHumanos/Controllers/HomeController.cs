@@ -13,5 +13,17 @@ namespace RecursosHumanos.Controllers
         {
             return View();
         }
+
+        public ActionResult Mantenimiento()
+        {
+            return View();
+        }
+
+        public ActionResult Informes()
+        {
+            return View();
+        }
     }
+
+    
 }

@@ -14,6 +14,18 @@ namespace RecursosHumanos.Controllers
     {
         private RecursosHumanosEntities db = new RecursosHumanosEntities();
 
+        public ActionResult EmpleadosInactivos()
+        {
+            var empl = db.Empleados.Include(e => e.cargo1).Include(e => e.Departamento1).Where(x => x.Estatus == "Inactivo").ToList();
+            return View(empl.ToList());
+        }
+
+        public ActionResult EmpleadosActivos()
+        {
+            var emp = db.Empleados.Include(e => e.cargo1).Include(e => e.Departamento1).Where(x => x.Estatus == "Activo").ToList();
+            return View(emp.ToList());
+        }
+
         public ActionResult Totalizar()
         {
             ViewBag.TotalSalario = db.Empleados.Sum(a => a.Salario);

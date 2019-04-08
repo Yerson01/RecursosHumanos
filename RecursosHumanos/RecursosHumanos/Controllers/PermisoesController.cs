@@ -14,6 +14,12 @@ namespace RecursosHumanos.Controllers
     {
         private RecursosHumanosEntities db = new RecursosHumanosEntities();
 
+        public ActionResult VerPermisos()
+        {
+            var per = db.Permiso.Include(p => p.Empleados);
+            return View(per.ToList());
+        }
+
         // GET: Permisoes
         public ActionResult Index()
         {

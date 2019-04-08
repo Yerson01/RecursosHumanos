@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Mantenimiento";
+}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
+
+<div class="contenedor-modulo">
+    <h2 class="margin">Mantenimiento</h2>
+
+    <div class="contenedor-iconos contenedor margin">
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Empleados")">
+                <i class="fas fa-user-tie"></i>
+                <p>Empleados</p>
+            </a>
+        </div>
+
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Nominas")">
+                <i class="fas fa-money-check-alt"></i>
+                <p>Nomina</p>
+            </a>
+        </div>
+
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Departamentoes")">
+                <i class="far fa-building"></i>
+                <p>Departamentos</p>
+            </a>
+        </div>
+
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Cargoes")">
+                <i class="fas fa-user-cog"></i>
+                <p>Cargos</p>
+            </a>
+        </div>
+
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Permisoes")">
+                <i class="fas fa-user-injured"></i>
+                <p>Permisos</p>
+            </a>
+        </div>
+
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Licencias")">
+                <i class="far fa-id-card"></i>
+                <p>Licencias</p>
+            </a>
+        </div>
+
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Salidas")">
+                <i class="fas fa-door-open"></i>
+                <p>Salidas</p>
+            </a>
+        </div>
+
+        <div class="modulo">
+            <a href="@Url.Action("Index", "Vacaciones")">
+                <i class="fas fa-plane"></i>
+                <p>Vacaciones</p>
+            </a>
+        </div>
+    </div>
+</div>

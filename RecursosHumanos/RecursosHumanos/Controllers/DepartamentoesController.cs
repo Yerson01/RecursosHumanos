@@ -14,6 +14,11 @@ namespace RecursosHumanos.Controllers
     {
         private RecursosHumanosEntities db = new RecursosHumanosEntities();
 
+        public ActionResult VerDepartamentos()
+        {
+            return View(db.Departamento.ToList());
+        }
+
         // GET: Departamentoes
         public ActionResult Index()
         {

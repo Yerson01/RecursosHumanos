@@ -14,6 +14,11 @@ namespace RecursosHumanos.Controllers
     {
         private RecursosHumanosEntities db = new RecursosHumanosEntities();
 
+        public ActionResult VerCargos()
+        {
+            return View(db.cargo.ToList());
+        }
+
         // GET: Cargoes
         public ActionResult Index()
         {

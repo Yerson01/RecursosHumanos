@@ -14,6 +14,12 @@ namespace RecursosHumanos.Controllers
     {
         private RecursosHumanosEntities db = new RecursosHumanosEntities();
 
+        public ActionResult VerNominas()
+        {
+            var nom = db.Nomina;
+            return View(nom.ToList());
+        }
+
         // GET: Nominas
         public ActionResult Index()
         {
