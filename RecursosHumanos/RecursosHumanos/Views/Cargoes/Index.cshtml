@@ -28,18 +28,22 @@
 
             @foreach (var item in Model)
             {
-            <tr class="tabla-body">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cargo1)
-                </td>
-                <td class="acciones">
-                    <a href="@Url.Action("Edit", new { id = item.ID })"><i class="fas fa-user-edit"></i></a>
-                    <a href="@Url.Action("Delete", new { id = item.ID })"><i class="fas fa-trash-alt"></i></a>
-                    <a href="@Url.Action("Details", new { id = item.ID })"><i class="fas fa-info-circle"></i></a>
-                </td>
-            </tr>
+                <tr class="tabla-body">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cargo1)
+                    </td>
+                    <td class="acciones">
+                        <a href="@Url.Action("Edit", new { id = item.ID })"><i class="fas fa-user-edit"></i></a>
+                        <a href="@Url.Action("Delete", new { id = item.ID })"><i class="fas fa-trash-alt"></i></a>
+                        <a href="@Url.Action("Details", new { id = item.ID })"><i class="fas fa-info-circle"></i></a>
+                    </td>
+                </tr>
             }
 
         </table>
+
+        <div class="opciones">
+            <a href="@Url.Action("Mantenimiento", "Home")" class="boton"><i class="fas fa-chevron-left"></i> Volver</a>
+        </div><!--OPCIONES-->
     </div>
 </div>

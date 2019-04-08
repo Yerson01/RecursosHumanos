@@ -24,78 +24,82 @@
             <a style="margin-right:0!important" href="@Url.Action("Totalizar", "Empleados")" class="boton"><i class="fas fa-money-check-alt"></i> Calcular Nómina</a>
         </div>
  
-    <div class="contenedor-tablas">
+        <div class="contenedor-tablas">
 
-        <table class="table">
-            <tr class="tabla-header">
-                <th>
-                    @Html.DisplayNameFor(model => model.Codigo_Empleado)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Apellido)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Departamento1.Nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.cargo1.Cargo1)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Salario)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Fecha_De_Ingreso)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Telefono)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Estatus)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr class="tabla-body">
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Codigo_Empleado)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Apellido)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Departamento1.Nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.cargo1.Cargo1)
-                    </td>
-                    <td>
-                        RD$ @Html.DisplayFor(modelItem => item.Salario)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Fecha_De_Ingreso)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Telefono)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Estatus)
-                    </td>
-
-                    <td class="acciones">
-                        <a href="@Url.Action("Edit", new { id = item.ID })"><i class="fas fa-user-edit"></i></a>
-                        <a href="@Url.Action("Delete", new { id = item.ID })"><i class="fas fa-trash-alt"></i></a>
-                        <a href="@Url.Action("Details", new { id = item.ID })"><i class="fas fa-info-circle"></i></a>
-                    </td>
+            <table class="table">
+                <tr class="tabla-header">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Codigo_Empleado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Apellido)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Departamento1.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.cargo1.Cargo1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Salario)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fecha_De_Ingreso)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefono)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Estatus)
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </table>
-    </div><!--contenedor-tablas-->
+
+                @foreach (var item in Model)
+                {
+                    <tr class="tabla-body">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Codigo_Empleado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Apellido)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Departamento1.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cargo1.Cargo1)
+                        </td>
+                        <td>
+                            RD$ @Html.DisplayFor(modelItem => item.Salario)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fecha_De_Ingreso)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Telefono)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estatus)
+                        </td>
+
+                        <td class="acciones">
+                            <a href="@Url.Action("Edit", new { id = item.ID })"><i class="fas fa-user-edit"></i></a>
+                            <a href="@Url.Action("Delete", new { id = item.ID })"><i class="fas fa-trash-alt"></i></a>
+                            <a href="@Url.Action("Details", new { id = item.ID })"><i class="fas fa-info-circle"></i></a>
+                        </td>
+                    </tr>
+                }
+            </table>
+
+            <div class="opciones">
+                <a href="@Url.Action("Mantenimiento", "Home")" class="boton"><i class="fas fa-chevron-left"></i> Volver</a>
+            </div><!--OPCIONES-->
+        </div><!--contenedor-tablas-->
 </div>
