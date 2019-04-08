@@ -39,7 +39,9 @@ namespace RecursosHumanos.Controllers
         // GET: Nominas/Create
         public ActionResult Create()
         {
-            ViewBag.FK_Empleado = new SelectList(db.Empleados, "ID", "Nombre");
+            ViewBag.TotalSalario = db.Empleados.Sum(a => a.Salario);
+
+            db.SaveChanges();
             return View();
         }
 

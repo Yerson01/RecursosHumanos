@@ -3,9 +3,38 @@
     ViewBag.Title = "Totalizar";
 }
 
-<h2>Totalizar</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+@Styles.Render("~/Content/estilos.css")
 
-Total de la nomina es: @ViewBag.TotalSalario <br />
-Total de empleados es: @ViewBag.TotalEmpleados
+<div class="contenedor-modulo contenedor">
+    <h2 class="margin">Nómina</h2>
 
-<a href="Empleados/LlenarCombo" class="bt">Entrar</a>
+    <div class="contenedor-tablas">
+        <table class="table">
+            <tr class="tabla-header">
+                <th>
+                    Monto Total
+                </th>
+                <th>
+                    Total de Empleados
+                </th>
+            </tr>
+
+            <tr class="tabla-body">
+                <td>
+                    RD$ @ViewBag.TotalSalario
+                </td>
+                <td>
+                    @ViewBag.TotalEmpleados
+                </td>
+            </tr>
+        </table>
+
+        <div class="opciones">
+            <a href="@Url.Action("Create", "Nominas")" class="boton"><i class="far fa-save"></i> Guardar en Nóminas</a>
+        </div><!--OPCIONES-->
+
+    </div>
+</div>

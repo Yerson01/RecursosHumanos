@@ -26,7 +26,7 @@
             <div class="campo">
                 @Html.LabelFor(model => model.Monto_Total, htmlAttributes: new { @class = "label" })
                 <div class="entrada">
-                    @Html.EditorFor(model => model.Monto_Total, new { htmlAttributes = new { @class = "campo-texto" } })
+                    @Html.EditorFor(model => model.Monto_Total, new { htmlAttributes = new { @class = "campo-texto", @Value= @ViewBag.TotalSalario } })
                     @Html.ValidationMessageFor(model => model.Monto_Total, "", new { @class = "text-danger" })
                 </div>
             </div>
