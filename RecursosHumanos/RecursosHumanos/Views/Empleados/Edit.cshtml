@@ -1,5 +1,5 @@
 ﻿@model RecursosHumanos.Models.Empleados
-
+@using RecursosHumanos.Models
 @{
     ViewBag.Title = "Edit";
 }
@@ -17,98 +17,98 @@
     {
         @Html.AntiForgeryToken()
 
-    <div class="contenedor-campos">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.ID)
-        <fieldset class="borde margin">
+        <div class="contenedor-campos">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ID)
+            <fieldset class="borde margin">
 
-            <legend>Información Personal</legend>
+                <legend>Información Personal</legend>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "campo-texto" } })
-                    @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.EditorFor(model => model.Nombre, new { htmlAttributes = new { @class = "campo-texto" } })
+                        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "campo-texto" } })
-                    @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Apellido, htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.EditorFor(model => model.Apellido, new { htmlAttributes = new { @class = "campo-texto" } })
+                        @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "campo-texto" } })
-                    @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Telefono, htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.EditorFor(model => model.Telefono, new { htmlAttributes = new { @class = "campo-texto" } })
+                        @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-        </fieldset>
+            </fieldset>
 
-        <fieldset class="borde margin">
+            <fieldset class="borde margin">
 
-            <legend>Información Empresarial</legend>
+                <legend>Información Empresarial</legend>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Codigo_Empleado, htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.EditorFor(model => model.Codigo_Empleado, new { htmlAttributes = new { @class = "campo-texto", @min = "1"} })
-                    @Html.ValidationMessageFor(model => model.Codigo_Empleado, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Codigo_Empleado, htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.EditorFor(model => model.Codigo_Empleado, new { htmlAttributes = new { @class = "campo-texto", @min = "1" } })
+                        @Html.ValidationMessageFor(model => model.Codigo_Empleado, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Departamento, "Departamento", htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.DropDownList("Departamento", null, htmlAttributes: new { @class = "campo-texto" })
-                    @Html.ValidationMessageFor(model => model.Departamento, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Departamento, "Departamento", htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.DropDownList("Departamento", null, htmlAttributes: new { @class = "campo-texto" })
+                        @Html.ValidationMessageFor(model => model.Departamento, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Cargo, "Cargo", htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.DropDownList("Cargo", null, htmlAttributes: new { @class = "campo-texto" })
-                    @Html.ValidationMessageFor(model => model.Cargo, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Cargo, "Cargo", htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.DropDownList("Cargo", null, htmlAttributes: new { @class = "campo-texto" })
+                        @Html.ValidationMessageFor(model => model.Cargo, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Salario, htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.EditorFor(model => model.Salario, new { htmlAttributes = new { @class = "campo-texto" } })
-                    @Html.ValidationMessageFor(model => model.Salario, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Salario, htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.EditorFor(model => model.Salario, new { htmlAttributes = new { @class = "campo-texto" } })
+                        @Html.ValidationMessageFor(model => model.Salario, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Fecha_De_Ingreso, htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.EditorFor(model => model.Fecha_De_Ingreso, new { htmlAttributes = new { @class = "campo-texto" } })
-                    @Html.ValidationMessageFor(model => model.Fecha_De_Ingreso, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Fecha_De_Ingreso, htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.EditorFor(model => model.Fecha_De_Ingreso, new { htmlAttributes = new { @class = "campo-texto" } })
+                        @Html.ValidationMessageFor(model => model.Fecha_De_Ingreso, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-            <div class="campo">
-                @Html.LabelFor(model => model.Estatus, htmlAttributes: new { @class = "label" })
-                <div class="entrada">
-                    @Html.EditorFor(model => model.Estatus, new { htmlAttributes = new { @class = "campo-texto" } })
-                    @Html.ValidationMessageFor(model => model.Estatus, "", new { @class = "text-danger" })
+                <div class="campo">
+                    @Html.LabelFor(model => model.Estatus, htmlAttributes: new { @class = "label" })
+                    <div class="entrada">
+                        @Html.DropDownListFor(model => model.Estatus, new SelectList(Enum.GetValues(typeof(Estatus))), new { @class = "campo-texto" })
+                        @Html.ValidationMessageFor(model => model.Estatus, "", new { @class = "text-danger" })
+                    </div>
                 </div>
-            </div>
 
-        </fieldset>
+            </fieldset>
 
-        <div class="opciones">
-            <a href="@Url.Action("Index")" class="boton"><i class="fas fa-user-times"></i> Cancelar</a>
-            <button type="submit" class="boton"><i class="far fa-save"></i> Guardar</button>
-        </div><!--OPCIONES-->
-    </div>
+            <div class="opciones">
+                <a href="@Url.Action("Index")" class="boton"><i class="fas fa-user-times"></i> Cancelar</a>
+                <button type="submit" class="boton"><i class="far fa-save"></i> Guardar</button>
+            </div><!--OPCIONES-->
+        </div>
     }
 
     @section Scripts {

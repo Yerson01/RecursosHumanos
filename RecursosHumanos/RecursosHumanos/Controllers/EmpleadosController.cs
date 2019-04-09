@@ -28,7 +28,8 @@ namespace RecursosHumanos.Controllers
 
         public ActionResult Totalizar()
         {
-            ViewBag.TotalSalario = db.Empleados.Sum(a => a.Salario);
+            var em = db.Empleados.Where(x => x.Estatus == "Activo").ToList();
+            ViewBag.TotalSalario = em.Sum(a => a.Salario);
             ViewBag.TotalEmpleados = db.Empleados.Count();
 
             db.SaveChanges();

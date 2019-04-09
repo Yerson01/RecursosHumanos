@@ -45,7 +45,8 @@ namespace RecursosHumanos.Controllers
         // GET: Nominas/Create
         public ActionResult Create()
         {
-            ViewBag.TotalSalario = db.Empleados.Sum(a => a.Salario);
+            var em = db.Empleados.Where(x => x.Estatus == "Activo").ToList();
+            ViewBag.TotalSalario = em.Sum(a => a.Salario);
 
             db.SaveChanges();
             return View();
